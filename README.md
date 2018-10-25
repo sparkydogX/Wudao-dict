@@ -3,11 +3,11 @@
 ![py](https://img.shields.io/badge/python-3.4.5-green.svg?style=plastic)![plat](https://img.shields.io/badge/platform-Ubuntu/CentOS/Debian-green.svg?style=plastic)
 
 ---
-
+Forked from https://github.com/ChestnutHeng/Wudao-dict  
 无道词典，是一个简洁优雅的有道词典命令行版本。支持英汉互查的功能，包含释义、词组、例句等有助于学习的内容。
 
 无道词典致力于做最好的命令行词典，随着我们优化排版、显示，增加生词本和补全功能，提供了良好的用户体验，并在不断改进中。
-
+本Repo添加了一些新的功能。
 英汉：
 
 ![En_Zh Demo](http://obbgthtoc.bkt.clouddn.com/gitScreenshot%20from%202016-09-22%2010-55-23.png)
@@ -26,8 +26,14 @@
 
 ## 安装说明
 
-遇到任何问题，或者有任何改善建议请联系作者。 
+遇到任何问题，或者有任何改善建议请联系作者。
+注意，你现在看到的代码是从 https://github.com/ChestnutHeng/Wudao-dict fork过来的。  
+如果对于原始的代码有任何疑问，请联系原作者或者到原始的repo<a href="https://github.com/ChestnutHeng/Wudao-dict/issues/new">创建新的 issue</a>进行提问
 
+### 关于这个repo新增功能的问题
+邮箱: csyguo@njust.edu.cn
+
+### 其他问题
 邮箱: chestnutheng@hotmail.com
 
 issue: <a href="https://github.com/ChestnutHeng/Wudao-dict/issues/new">创建新的 issue</a>
@@ -84,6 +90,7 @@ Youdao is wudao, a powerful dict.
 -h, --help             display this help and exit (查看帮助)
 -s, --short-desc       do not show sentence       (只看释义)
 -n, --not-save         query and save to notebook (不存入生词本)
+-d, --dictation        spell words in notebook (默写生词本中的单词)
 生词本文件: ... some path .../notebook.txt
 查询次数: ... some path .../usr_word.json
 ```
@@ -121,3 +128,8 @@ Youdao is wudao, a powerful dict.
 * 添加了tab补全的支持，对常用的1w词进行tab补全 <a href="https://github.com/ChestnutHeng/Wudao-dict/issues/15">issue #15: 模糊查询的支持</a>
 * 添加了生词本功能，自动把查过的词和释义添加到生词本文件中
 * 优化了排版，同一单词不再截断换行了 #该功能因为转移字符的问题搁置 <a href="https://github.com/ChestnutHeng/Wudao-dict/issues/16">issue #16:避免在单词内换行</a>
+
+#### Ver 2.1
+
+* 增加了默写的功能，并且能够显示错误次数。  
+* 更新了ReadMe文件

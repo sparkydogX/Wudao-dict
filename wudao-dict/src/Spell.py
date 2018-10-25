@@ -34,7 +34,7 @@ class DictationClass():
         random.shuffle(self.indexList)
         self.curindex = -1
         self.auto = True
-        self.commandlist = ['n', 'r', 'h', 'd', 'q', 'l', 'i']
+        self.commandlist = ['n', 'r', 'h', 'd', 'q', 'l', 'i', '']
         print('Welcome to dictation.')
         print('There are {0} words in notebook.'.format(len(self.notebook)))
 
@@ -44,13 +44,13 @@ class DictationClass():
             print('-' * int(columns))
             print('\x1b[6;30;42m' +
                   'n' + '\x1b[0m' + 'ext' +
-                  self.UNDERLINEPATTERN %'r' + 'etry' +
-                  self.UNDERLINEPATTERN %'h' + 'elp' +
-                  self.UNDERLINEPATTERN %'l' + 'ook_up' +
-                  self.UNDERLINEPATTERN %'i' + 'nfo' +
-                  self.UNDERLINEPATTERN %'d' + 'elete' +
-                  self.UNDERLINEPATTERN %'q' + 'uit'  + ' :'
-                  ,end='')
+                  self.UNDERLINEPATTERN % 'r' + 'etry' +
+                  self.UNDERLINEPATTERN % 'h' + 'elp' +
+                  self.UNDERLINEPATTERN % 'l' + 'ook_up' +
+                  self.UNDERLINEPATTERN % 'i' + 'nfo' +
+                  self.UNDERLINEPATTERN % 'd' + 'elete' +
+                  self.UNDERLINEPATTERN % 'q' + 'uit' + ' :'
+                  , end='')
             # print(':', end=' ')
             cmd = input().strip()
 
@@ -60,7 +60,7 @@ class DictationClass():
                 self.quitspell()
             elif cmd == 'h':
                 print('Nothing meaningful here.')
-            elif cmd == 'n':
+            elif cmd == 'n' or cmd == '':
                 IsAnswerCorrect = False
                 self.curindex += 1
                 if self.curindex >= len(self.notebook):
@@ -81,6 +81,8 @@ class DictationClass():
                 self.deleteEntry()
             elif cmd == 'p':
                 pprint(self.notebook)
+            elif cmd == 'i':
+                self.info()
 
     def spell(self):
         k = self.keyList[self.indexList[self.curindex]]
@@ -110,7 +112,11 @@ class DictationClass():
         os.system('wd ' + k)
 
     def info(self):
-        pass
+        sorted_by_value = sorted(self.wrongcollection.items(), key=lambda kv: kv[1], reverse=True)
+        print('错误统计:')
+        displen = min(50, len(sorted_by_value))
+        for elem in sorted_by_value[:displen]:
+            print('{0:<20} {1:>3}'.format(elem[0], elem[1]))
 
     def deleteEntry(self):
         self.curindex = max(self.curindex, 0)
