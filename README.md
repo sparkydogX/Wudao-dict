@@ -6,8 +6,8 @@
 Forked from https://github.com/ChestnutHeng/Wudao-dict  
 无道词典，是一个简洁优雅的有道词典命令行版本。支持英汉互查的功能，包含释义、词组、例句等有助于学习的内容。
 
-无道词典致力于做最好的命令行词典，随着我们优化排版、显示，增加生词本和补全功能，提供了良好的用户体验，并在不断改进中。
-本Repo添加了一些新的功能。
+无道词典致力于做最好的命令行词典，随着我们优化排版、显示，增加生词本和补全功能，提供了良好的用户体验，并在不断改进中。  
+本Repo添加了一些新的功能。  
 英汉：
 
 ![En_Zh Demo](http://obbgthtoc.bkt.clouddn.com/gitScreenshot%20from%202016-09-22%2010-55-23.png)
@@ -21,7 +21,8 @@ Forked from https://github.com/ChestnutHeng/Wudao-dict
 1. 基础词典(20w英汉查询 + 10w汉英查询 + 网络词库)
 2. 词组查询功能(例如直接输入`wd in order to`)
 3. 自动补全功能(按Tab自动补全单词，包含1w个最热的词)
-3. 生词本(自动把历史记录存为生词本，`wd -h`查看生词本文件位置)
+4. 生词本(自动把历史记录存为生词本，`wd -h`查看生词本文件位置)
+5. 默写单词的功能
 
 
 ## 安装说明
@@ -31,8 +32,8 @@ Forked from https://github.com/ChestnutHeng/Wudao-dict
 如果对于原始的代码有任何疑问，请联系原作者或者到原始的repo<a href="https://github.com/ChestnutHeng/Wudao-dict/issues/new">创建新的 issue</a>进行提问
 
 ### 关于这个repo新增功能的问题
-邮箱: csyguo@njust.edu.cn
-
+邮箱: csyguo@njust.edu.cn  
+issue:[在本repo创建新的issue](https://github.com/sparkydogX/Wudao-dict/issues)
 ### 其他问题
 邮箱: chestnutheng@hotmail.com
 
