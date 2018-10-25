@@ -10,14 +10,14 @@ from src.UserHistory import UserHistory
 from src.WudaoClient import WudaoClient
 from src.tools import is_alphabet
 from src.tools import ie
-
+from src.Spell import DictationClass
 
 class WudaoCommand:
     def __init__(self):
         # Member
         self.word = ''
         self.param_list = []
-        self.conf = {"short": False, "save": False}
+        self.conf = {"short": False, "save": False,"spell":False}
         self.is_zh = False
         # Init
         self.param_separate()
@@ -53,6 +53,7 @@ class WudaoCommand:
             print('-h, --help             display this help and exit (查看帮助)')
             print('-s, --short-desc       do not show sentence       (只看释义)')
             print('-n, --not-save         query and save to notebook (不存入生词本)')
+            print('-d, --dictation        spell word in notebook (默写生词本中的单词)')
             print('生词本文件: ' + os.path.abspath('./usr/') + '/notebook.txt')
             print('查询次数: ' + os.path.abspath('./usr/') + '/usr_word.json')
             #print('-o, --online-search          search word online')
@@ -66,13 +67,18 @@ class WudaoCommand:
             self.conf['short'] = True
         if 'n' in self.param_list or '-not-save' in self.param_list:
             self.conf['save'] = True
-        if not self.word:
+        if 'd' in self.param_list or '-dictation' in self.param_list:
+            self.conf['spell'] = True
+        if (not self.word) and (not self.conf['spell']) :
             print('Usage: wd [OPTION]... [WORD]')
             exit(0)
 
     # query word
     def query(self):
         word_info = {}
+        # get columns of current terminal window
+        rows, columns = os.popen('stty size', 'r').read().split()
+        print('-'*int(columns))
         # query on server
         server_context = self.client.get_word_info(self.word).strip()
         if not self.is_zh:
@@ -125,10 +131,16 @@ class WudaoCommand:
         if not self.conf['save'] and not self.is_zh:
             self.history_manager.save_note(word_info)
 
+
+
 def main():
     app = WudaoCommand()
     app.param_parse()
-    app.query()
+    if app.conf['spell']:
+        DictationClass().run()
+
+    else:
+        app.query()
 
 
 if __name__ == '__main__':

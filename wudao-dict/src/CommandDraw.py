@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
 import os
-
+import copy
 class CommandDraw:
     RED_PATTERN = '\033[31m%s\033[0m'
     GREEN_PATTERN = '\033[32m%s\033[0m'
@@ -30,6 +30,8 @@ class CommandDraw:
             print(text)
     
     def draw_text(self, word, conf):
+
+        rows, columns = os.popen('stty size', 'r').read().split()
         # Word
         print(self.RED_PATTERN % word['word'])
         # pronunciation
@@ -75,9 +77,12 @@ class CommandDraw:
                         sentence_t += str(count) + '. ' + self.GREEN_PATTERN % (v[1])
                     else:
                         sentence_t += str(count) + '. ' + self.GREEN_PATTERN % ('[' + v[1] + ']')
+
                     sentence_t += v[0] + '\n'
+
+
                     for sv in v[2]:
-                        sentence_t += self.GREEN_PATTERN % u'  例: ' + self.BROWN_PATTERN % (sv[0] + sv[1]) + '\n'
+                        sentence_t += self.GREEN_PATTERN % u'  例: ' + self.BROWN_PATTERN % (sv[0] + '\n\t' + sv[1]) + '\n'
                     count += 1
                     print(sentence_t)
                 else:

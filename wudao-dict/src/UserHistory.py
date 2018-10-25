@@ -79,3 +79,4 @@ class UserHistory:
                 spaces = ' '*(20 - len(word_struct['word']))
                 f.write(word_struct['word'] + spaces + ' ' + ph + '\n')
 
+
