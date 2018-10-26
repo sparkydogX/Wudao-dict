@@ -1,7 +1,8 @@
 #!/bin/bash
 
+# ======================================================================
 count=`ps -ef | grep "python3 WudaoServer.py" | grep -v "grep" | wc -l`
- 
+
 if [ $count == 0 ]; then
     nohup python3 WudaoServer.py > ./usr/server.log 2>&1 &
     git pull origin master > ./usr/pull.log 2>&1 &
@@ -9,3 +10,29 @@ fi
 
 python3 WudaoCommand.py $*
 
+# ======================================================================
+
+
+
+# 如果需要发音，请注释上面的代码。并且将下面的代码解除注释
+
+#function playaudio(){
+#    if [ -n $1 ];then
+#        mp3=./usr/mp3/$1.mp3
+#        if [ ! -f $mp3 ];then
+#            file=`wget -qO- https://cn.bing.com/dict/search\?q\=$1 | grep -Eoi "(https://dictionary.blob.core.chinacloudapi.cn/media/audio/tom/.{0,50}mp3)" | grep -m 1 ".*"`
+#            wget -O $mp3 $file > /dev/null 2>&1
+#        fi
+#        nohup ffplay -autoexit -nodisp -i -loglevel quiet $mp3 > /dev/null 2>&1
+#    fi
+#}
+#
+#playaudio $1 &
+#count=`ps -ef | grep "python3 WudaoServer.py" | grep -v "grep" | wc -l`
+#
+#if [ $count == 0 ]; then
+#    nohup python3 WudaoServer.py > ./usr/server.log 2>&1 &
+#    git pull origin master > ./usr/pull.log 2>&1 &
+#fi
+#
+#python3 WudaoCommand.py $*
