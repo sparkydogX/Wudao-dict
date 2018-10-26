@@ -121,7 +121,7 @@ Youdao is wudao, a powerful dict.
 
 * 在线查询修复了不显示被查词的bug
 
-#### Ver 2.0 (latest)
+#### Ver 2.0 
 
 * 修复了文件夹过大的问题，由263M缩小到80M左右。<a href="https://github.com/ChestnutHeng/Wudao-dict/issues/1"> issue #1: 文件夹大小</a>
 * 添加了更多的常用词和单复数形式
