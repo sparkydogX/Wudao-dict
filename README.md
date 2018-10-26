@@ -52,14 +52,15 @@ issue: <a href="https://github.com/ChestnutHeng/Wudao-dict/issues/new">创建新
 
 2.  运行
     ```sh
-    git clone https://github.com/chestnutheng/wudao-dict
+    git clone https://github.com/sparkydogX/Wudao-dict.git
+    git checkout macOS_v2.1.1
     cd ./wudao-dict/wudao-dict
     sudo bash setup.sh #或者sudo ./setup.sh
     ```
 
     看到出现`Setup Finished!`表明安装成功。如果发生由于移动安装文件不能使用的情况，只需再次运行该脚本即可。
 
-无法clone的，可以下载 https://github.com/ChestnutHeng/Wudao-dict/archive/master.zip ,然后解压安装使用。
+无法clone的，可以[从github页面](https://github.com/sparkydogX/Wudao-dict/tree/macOS_v2.1.1)下载zip文件 ,然后解压安装使用。
 
 **Note: 注意python的版本，只支持python3**
 
