@@ -1,6 +1,6 @@
 # 无道词典（Mac版本）
 
-![py](https://img.shields.io/badge/python-3.4.5-green.svg?style=plastic)![plat](https://img.shields.io/badge/platform-Ubuntu/CentOS/Debian-green.svg?style=plastic)
+![py](https://img.shields.io/badge/python-3.4.5-green.svg?style=plastic)![plat](https://img.shields.io/badge/platform-macOS-green.svg?style=plastic)
 
 ---
 Forked from https://github.com/ChestnutHeng/Wudao-dict  
@@ -30,7 +30,7 @@ Forked from https://github.com/ChestnutHeng/Wudao-dict
 遇到任何问题，或者有任何改善建议请联系作者。
 注意，你现在看到的代码是从 https://github.com/ChestnutHeng/Wudao-dict fork过来的。  
 如果对于原始的代码有任何疑问，请联系原作者或者到原始的repo<a href="https://github.com/ChestnutHeng/Wudao-dict/issues/new">创建新的 issue</a>进行提问
-
+ 
 ### 关于这个repo新增功能的问题
 邮箱: csyguo@njust.edu.cn  
 issue:[在本repo创建新的issue](https://github.com/sparkydogX/Wudao-dict/issues)
