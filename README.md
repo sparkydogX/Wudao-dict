@@ -1,4 +1,4 @@
-# 无道词典
+# 无道词典（Mac版本）
 
 ![py](https://img.shields.io/badge/python-3.4.5-green.svg?style=plastic)![plat](https://img.shields.io/badge/platform-Ubuntu/CentOS/Debian-green.svg?style=plastic)
 
@@ -39,27 +39,13 @@ issue:[在本repo创建新的issue](https://github.com/sparkydogX/Wudao-dict/iss
 
 issue: <a href="https://github.com/ChestnutHeng/Wudao-dict/issues/new">创建新的 issue</a>
 
-### Linux 环境
+### 安装 环境
 
 1. 安装环境: 需要python3和bs4, lxml(在线搜索用)
-    #### Debian/Ubuntu
+    
+    #### MacOS
+    需要安装有`brew`和`python3`
     ```
-    sudo apt-get install python3
-    sudo apt-get install python3-pip
-    sudo pip3 install bs4
-    sudo pip3 install lxml
-    ```
- 
-    #### OpenSUSE
-    ```
-    sudo zypper install python3-pip
-    sudo pip3 install bs4
-    sudo pip3 install lxml
-    ```
-    #### CentOS
-    ```
-    sudo yum install python34
-    sudo yum install python34-pip
     sudo pip3 install bs4
     sudo pip3 install lxml
     ```
@@ -77,7 +63,25 @@ issue: <a href="https://github.com/ChestnutHeng/Wudao-dict/issues/new">创建新
 
 **Note: 注意python的版本，只支持python3**
 
+3.  英文发音（可选）
 
+    #### 需要ffplay
+    通过brew安装ffplay。这里有个trick。
+    ```
+    brew install wget
+    brew install sdl --use-gcc
+    brew uninstall ffmpeg
+    brew install ffmpeg --use-gcc
+    ```
+
+    #### 修改 ./Wudao-dict/wudao-dict/wdd文件
+    
+    按照文件注释中的说明修改。
+    
+    #### 新建mp3文件夹
+    
+    在 wudao-dict/usr 文件夹下新建 mp3 文件夹，用于保存单词发音的音频文件。
+    
 ## 使用说明
 
 运行`wd -h`查看使用说明。
@@ -121,7 +125,7 @@ Youdao is wudao, a powerful dict.
 
 * 在线查询修复了不显示被查词的bug
 
-#### Ver 2.0 (latest)
+#### Ver 2.0 
 
 * 修复了文件夹过大的问题，由263M缩小到80M左右。<a href="https://github.com/ChestnutHeng/Wudao-dict/issues/1"> issue #1: 文件夹大小</a>
 * 添加了更多的常用词和单复数形式
@@ -134,3 +138,9 @@ Youdao is wudao, a powerful dict.
 
 * 增加了默写的功能，并且能够显示错误次数。  
 * 更新了ReadMe文件
+
+#### Ver 2.1.1
+
+* 修改命令行用以在Mac上运行  
+* 按照 https://github.com/ChestnutHeng/Wudao-dict/issues/23#issuecomment-368378350 提供的方法增加发音的功能
+* 存在的问题：存储的音频文件不会被自动删除，大量使用时需要定期手动清理  
