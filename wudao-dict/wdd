@@ -15,19 +15,29 @@ python3 WudaoCommand.py $*
 
 
 # 如果需要发音，请注释上面的代码。并且将下面的代码解除注释
-
 #function playaudio(){
 #    if [ -n $1 ];then
+#        mkdir -p ./usr/mp3
 #        mp3=./usr/mp3/$1.mp3
 #        if [ ! -f $mp3 ];then
-#            file=`wget -qO- https://cn.bing.com/dict/search\?q\=$1 | grep -Eoi "(https://dictionary.blob.core.chinacloudapi.cn/media/audio/tom/.{0,50}mp3)" | grep -m 1 ".*"`
+##            file=`wget -qO- https://cn.bing.com/dict/search\?q\=$1 | grep -Eoi "(https://dictionary.blob.core.chinacloudapi.cn/media/audio/tom/.{0,50}mp3)" | grep -m 1 ".*"`
+#            file="http://dict.youdao.com/dictvoice?type=2&audio=$1"
 #            wget -O $mp3 $file > /dev/null 2>&1
 #        fi
 #        nohup ffplay -autoexit -nodisp -i -loglevel quiet $mp3 > /dev/null 2>&1
 #    fi
 #}
 #
-#playaudio $1 &
+#
+#WORD=""
+#for var in "$@"
+#do
+#    if [[ ${var:0:1} != - ]] ; then
+#    WORD="$WORD"_"$var"
+#fi
+#done
+#WORD="${WORD:1}"
+#playaudio $WORD &
 #count=`ps -ef | grep "python3 WudaoServer.py" | grep -v "grep" | wc -l`
 #
 #if [ $count == 0 ]; then
