@@ -77,6 +77,10 @@ issue: <a href="https://github.com/ChestnutHeng/Wudao-dict/issues/new">创建新
 
 **Note: 注意python的版本，只支持python3**
 
+3.  添加发音功能(可选)
+
+    需要使用到wget和ffmpeg中的ffplay
+    `sudo apt-get install wget ffmpeg`
 
 ## 使用说明
 
@@ -134,3 +138,8 @@ Youdao is wudao, a powerful dict.
 
 * 增加了默写的功能，并且能够显示错误次数。  
 * 更新了ReadMe文件
+
+#### Ver2.2 
+
+* BugFix:修正了无法正确朗读词组的问题
+* 流畅性改进:更换词典的音频来源,提高了获取音频文件的速度. 
