@@ -145,3 +145,8 @@ Youdao is wudao, a powerful dict.
 * 修改命令行用以在Mac上运行  
 * 按照 https://github.com/ChestnutHeng/Wudao-dict/issues/23#issuecomment-368378350 提供的方法增加发音的功能
 * 存在的问题：存储的音频文件不会被自动删除，大量使用时需要定期手动清理  
+
+#### Ver2.2 
+
+* BugFix:修正了无法正确朗读词组的问题
+* 流畅性改进:更换词典的音频来源,提高了获取音频文件的速度. 
