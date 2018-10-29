@@ -4,13 +4,14 @@ import json
 import sys
 import os
 
-
 from src.CommandDraw import CommandDraw
 from src.UserHistory import UserHistory
 from src.WudaoClient import WudaoClient
 from src.tools import is_alphabet
 from src.tools import ie
 from src.Spell import DictationClass
+from src.sync import Sync_Up
+from src.sync import Sync_Down
 
 class WudaoCommand:
     def __init__(self):
@@ -54,6 +55,8 @@ class WudaoCommand:
             print('-s, --short-desc       do not show sentence       (只看释义)')
             print('-n, --not-save         query and save to notebook (不存入生词本)')
             print('-d, --dictation        spell word in notebook (默写生词本中的单词)')
+            print('-su, --sync-up         Sync up to baidu pan(同步上传到百度网盘)')
+            print('-sd, --sync-down       Sync down to baidu pan(从百度网盘下载同步)')
             print('生词本文件: ' + os.path.abspath('./usr/') + '/notebook.txt')
             print('查询次数: ' + os.path.abspath('./usr/') + '/usr_word.json')
             #print('-o, --online-search          search word online')
@@ -69,6 +72,14 @@ class WudaoCommand:
             self.conf['save'] = True
         if 'd' in self.param_list or '-dictation' in self.param_list:
             self.conf['spell'] = True
+        if 'su' in self.param_list or '-sync-up' in self.param_list:
+            print('Sync up')
+            Sync_Up()
+            exit(0)
+        if 'sd' in self.param_list or '-sync-down' in self.param_list:
+            print('Sync down')
+            Sync_Down()
+            exit(0)
         if (not self.word) and (not self.conf['spell']) :
             print('Usage: wd [OPTION]... [WORD]')
             exit(0)
