@@ -1,4 +1,4 @@
-# 无道词典
+# 无道词典----(查询+朗读+默写+云同步)
 
 ![py](https://img.shields.io/badge/python-3.4.5-green.svg?style=plastic)![plat](https://img.shields.io/badge/platform-Ubuntu/CentOS/Debian-green.svg?style=plastic)
 
@@ -7,7 +7,7 @@ Forked from https://github.com/ChestnutHeng/Wudao-dict
 无道词典，是一个简洁优雅的有道词典命令行版本。支持英汉互查的功能，包含释义、词组、例句等有助于学习的内容。
 
 无道词典致力于做最好的命令行词典，随着我们优化排版、显示，增加生词本和补全功能，提供了良好的用户体验，并在不断改进中。  
-本Repo添加了一些新的功能。  
+本Repo添加的新功能:朗读,默写,云同步.
 英汉：
 
 ![En_Zh Demo](http://obbgthtoc.bkt.clouddn.com/gitScreenshot%20from%202016-09-22%2010-55-23.png)
@@ -23,7 +23,8 @@ Forked from https://github.com/ChestnutHeng/Wudao-dict
 3. 自动补全功能(按Tab自动补全单词，包含1w个最热的词)
 4. 生词本(自动把历史记录存为生词本，`wd -h`查看生词本文件位置)
 5. 默写单词的功能
-
+6. 朗读单词的功能
+7. 通过百度网盘在云端同步生词本
 
 ## 安装说明
 
@@ -82,6 +83,12 @@ issue: <a href="https://github.com/ChestnutHeng/Wudao-dict/issues/new">创建新
     需要使用到wget和ffmpeg中的ffplay
     `sudo apt-get install wget ffmpeg`
 
+4. 云端同步生词本
+    
+    需要在python3下安装[bypy](https://github.com/houtianze/bypy)
+    第一次运行时需要授权，只需跑任何一个命令（比如 bypy info）然后跟着说明（登陆等）来授权即可。授权只需一次，一旦成功，以后不会再出现授权提示.
+    但是由于百度方面的限制,授权有时候会失效,需要使用`bypy refresh`来重新授权.
+
 ## 使用说明
 
 运行`wd -h`查看使用说明。
@@ -96,6 +103,8 @@ Youdao is wudao, a powerful dict.
 -s, --short-desc       do not show sentence       (只看释义)
 -n, --not-save         query and save to notebook (不存入生词本)
 -d, --dictation        spell words in notebook (默写生词本中的单词)
+-su, --sync-up         Sync up to baidu pan(同步上传到百度网盘)
+-sd, --sync-down       Sync down to baidu pan(从百度网盘下载同步)
 生词本文件: ... some path .../notebook.txt
 查询次数: ... some path .../usr_word.json
 ```
@@ -143,3 +152,7 @@ Youdao is wudao, a powerful dict.
 
 * BugFix:修正了无法正确朗读词组的问题
 * 流畅性改进:更换词典的音频来源,提高了获取音频文件的速度. 
+
+#### Ver2.3
+
+* New Feature:增加云端同步生词本的功能.
