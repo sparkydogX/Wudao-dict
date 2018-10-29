@@ -1,4 +1,4 @@
-# 无道词典----(查询+朗读+默写+云同步)
+# 无道词典
 
 ![py](https://img.shields.io/badge/python-3.4.5-green.svg?style=plastic)![plat](https://img.shields.io/badge/platform-Ubuntu/CentOS/Debian-green.svg?style=plastic)
 
@@ -7,7 +7,7 @@ Forked from https://github.com/ChestnutHeng/Wudao-dict
 无道词典，是一个简洁优雅的有道词典命令行版本。支持英汉互查的功能，包含释义、词组、例句等有助于学习的内容。
 
 无道词典致力于做最好的命令行词典，随着我们优化排版、显示，增加生词本和补全功能，提供了良好的用户体验，并在不断改进中。  
-本Repo添加的新功能:朗读,默写,云同步.
+本Repo添加了一些新的功能。  
 英汉：
 
 ![En_Zh Demo](http://obbgthtoc.bkt.clouddn.com/gitScreenshot%20from%202016-09-22%2010-55-23.png)
@@ -40,7 +40,7 @@ issue:[在本repo创建新的issue](https://github.com/sparkydogX/Wudao-dict/iss
 
 issue: <a href="https://github.com/ChestnutHeng/Wudao-dict/issues/new">创建新的 issue</a>
 
-### Linux 环境
+### Linux/macOS 环境 
 
 1. 安装环境: 需要python3和bs4, lxml(在线搜索用)
     #### Debian/Ubuntu
@@ -64,6 +64,12 @@ issue: <a href="https://github.com/ChestnutHeng/Wudao-dict/issues/new">创建新
     sudo pip3 install bs4
     sudo pip3 install lxml
     ```
+    #### macOS
+    需要安装有`brew`和`python3`
+    ```
+    sudo pip3 install bs4
+    sudo pip3 install lxml
+    ```
 
 2.  运行
     ```sh
@@ -80,15 +86,27 @@ issue: <a href="https://github.com/ChestnutHeng/Wudao-dict/issues/new">创建新
 
 3.  添加发音功能(可选)
 
+    安装ffplay
+    #### Linux
     需要使用到wget和ffmpeg中的ffplay
     `sudo apt-get install wget ffmpeg`
-
+    #### macOS
+    通过brew安装ffplay。这里有个trick。
+    ```
+    brew install wget
+    brew install sdl --use-gcc
+    brew uninstall ffmpeg
+    brew install ffmpeg --use-gcc
+    ```
+    
 4. 云端同步生词本
     
     需要在python3下安装[bypy](https://github.com/houtianze/bypy)
     第一次运行时需要授权，只需跑任何一个命令（比如 bypy info）然后跟着说明（登陆等）来授权即可。授权只需一次，一旦成功，以后不会再出现授权提示.
     但是由于百度方面的限制,授权有时候会失效,需要使用`bypy refresh`来重新授权.
 
+
+ 
 ## 使用说明
 
 运行`wd -h`查看使用说明。
@@ -147,6 +165,12 @@ Youdao is wudao, a powerful dict.
 
 * 增加了默写的功能，并且能够显示错误次数。  
 * 更新了ReadMe文件
+
+#### Ver 2.1.1
+
+* 修改命令行用以在Mac上运行  
+* 按照 https://github.com/ChestnutHeng/Wudao-dict/issues/23#issuecomment-368378350 提供的方法增加发音的功能
+* 存在的问题：存储的音频文件不会被自动删除，大量使用时需要定期手动清理  
 
 #### Ver2.2 
 
