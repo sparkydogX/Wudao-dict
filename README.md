@@ -1,4 +1,4 @@
-# 无道词典
+# 无道词典(查询+朗读+默写+云同步)
 
 ![py](https://img.shields.io/badge/python-3.4.5-green.svg?style=plastic)![plat](https://img.shields.io/badge/platform-Ubuntu/CentOS/Debian/macOS-green.svg?style=plastic)
 
