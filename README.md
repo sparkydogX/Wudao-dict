@@ -1,6 +1,6 @@
 # 无道词典
 
-![py](https://img.shields.io/badge/python-3.4.5-green.svg?style=plastic)![plat](https://img.shields.io/badge/platform-Ubuntu/CentOS/Debian-green.svg?style=plastic)
+![py](https://img.shields.io/badge/python-3.4.5-green.svg?style=plastic)![plat](https://img.shields.io/badge/platform-Ubuntu/CentOS/Debian/macOS-green.svg?style=plastic)
 
 ---
 Forked from https://github.com/ChestnutHeng/Wudao-dict  
